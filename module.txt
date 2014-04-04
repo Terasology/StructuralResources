@@ -1,0 +1,9 @@
+{
+    "id" : "StructuralResources",
+    "version" : "0.1.0",
+    "author" : "skaldarnar",
+    "displayName" : "Structural Resources",
+    "description" : "This module adds various resources for buildings, e.g. new shapes.",
+    "dependencies" : [],
+    "isServerSideOnly" : false
+}
