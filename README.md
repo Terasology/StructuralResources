@@ -8,6 +8,11 @@ A modules that provides various building resources, e.g. shapes and specific tex
 Currently, the module contains the following shapes
 
 * **Obelisk**: base, 3 pillar shapes (bottom, middle, tip)
+* **Pillar**: pillar base, top and middle part
+
+## Contributors
+* Tobias Nett @skaldarnar
+* A'nW
 
 ### License
 
