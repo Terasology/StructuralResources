@@ -1,0 +1,19 @@
+/**
+ * A barrel is a quite detailed storage block, probably useful for your RPG maps.
+ */
+{
+    "rotation" : "horizontal",
+    // Graphics
+    "tiles" : {
+        "center" : "StructuralResources:WoodenBarrel",
+        "topBottom" : "StructuralResources:WoodenBarrelTopBottom"
+    },
+    "shape" : "StructuralResources:Barrel",
+    "entity" : {
+        "prefab" : "chest"
+    },
+    "inventory" : {
+        "stackable" : false,
+        "directPickup" : true
+    }
+}
