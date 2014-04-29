@@ -2,7 +2,7 @@
 
 This module provides various building resources, e.g. shapes and specific textures.
 
-![image1](images/Terasology-2014-04-04-obelisks.jpg "Examples for obelisk shapes.")
+![image1](https://github.com/MetaTerasology/StructuralResources/images/Terasology-2014-04-04-obelisks.jpg "Examples for obelisk shapes.")
 
 ## Content
 Currently, the module contains the following shapes
@@ -12,10 +12,10 @@ Currently, the module contains the following shapes
 * **Stack**: three stack shapes (like ingots or bars; 1/3, 2/3 and Full Stack)
 * **Barrel**: barrel shape and texture
 
-![image2](images/Terasology-140428172032-1152x700.jpg "Stacks and barrel shape.")
+![image2](https://github.com/MetaTerasology/StructuralResources/images/Terasology-140428172032-1152x700.jpg "Stacks and barrel shape.")
 
 ## Contributors
-* Tobias Nett @skaldarnar
+* Tobias Nett [@skaldarnar](https://github.com/skaldarnar)
 * A'nW
 
 ### License
