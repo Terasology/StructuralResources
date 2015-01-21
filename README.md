@@ -1,6 +1,6 @@
 # Strcutural Resources
 
-This module provides various building resources, e.g. shapes and specific textures.
+This module provides various building resources, e.g., shapes and textures.
 
 ![image1](https://github.com/MetaTerasology/StructuralResources/raw/master/images/Terasology-2014-04-04-obelisks.jpg "Examples for obelisk shapes.")
 
@@ -11,12 +11,14 @@ Currently, the module contains the following shapes
 * **Pillar**: pillar base, top and middle part
 * **Stack**: three stack shapes (like ingots or bars; 1/3, 2/3 and Full Stack)
 * **Barrel**: barrel shape and texture
+* **Connectors**: connectors for cables, axles, ... (two sizes, different variants)
 
 ![image2](https://github.com/MetaTerasology/StructuralResources/raw/master/images/Terasology-140428172032-1152x700.jpg "Stacks and barrel shape.")
 
 ## Contributors
-* Tobias Nett [@skaldarnar](https://github.com/skaldarnar)
+* [@skaldarnar](https://github.com/skaldarnar)
 * A'nW
+* [@Josharias](https://github.com/Josharias)
 
 ### License
 
