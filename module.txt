@@ -4,6 +4,11 @@
     "author" : "skaldarnar, A'nW",
     "displayName" : "Structural Resources",
     "description" : "This module adds various resources for buildings, e.g. new shapes.",
-    "dependencies" : [],
+    "dependencies" : [
+        {
+            "id" : "Core",
+            "minVersion" : "1.0.0"
+        }
+    ],
     "isServerSideOnly" : false
 }
