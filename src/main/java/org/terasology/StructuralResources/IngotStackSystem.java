@@ -129,7 +129,6 @@ public class IngotStackSystem extends BaseComponentSystem {
         // only ingot items allowed in the ingot stack
         if (!item.hasComponent(IngotComponent.class)) {
             event.consume();
-            return;
         }
     }
 
@@ -185,13 +184,7 @@ public class IngotStackSystem extends BaseComponentSystem {
         Block block = worldProvider.getBlock(blockPos);
         Block targetBlock = worldProvider.getBlock(targetPos);
 
-        if (!block.isAttachmentAllowed()) {
-            return false;
-        }
-        if (!targetBlock.isReplacementAllowed() || targetBlock.isTargetable()) {
-            return false;
-        }
-        return true;
+        return block.isAttachmentAllowed() && targetBlock.isReplacementAllowed() && !targetBlock.isTargetable();
     }
 
     private int findSlot(EntityRef entity) {
