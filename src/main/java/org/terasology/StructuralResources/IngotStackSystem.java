@@ -91,7 +91,7 @@ public class IngotStackSystem extends BaseComponentSystem {
 
         } else if (canPlaceBlock(blockPos, targetPos)) {
             Block newStackBlock = blockManager.getBlockFamily(LAYER_1_URI)
-                    .getBlockForPlacement(worldProvider, blockEntityRegistry, targetPos, surfaceSide, secondaryDirection);
+                    .getBlockForPlacement(targetPos, surfaceSide, secondaryDirection);
             PlaceBlocks placeNewIngotStack = new PlaceBlocks(targetPos, newStackBlock, instigator);
             worldProvider.getWorldEntity().send(placeNewIngotStack);
             instigator.send(new PlaySoundEvent(Assets.getSound("engine:PlaceBlock").get(), 0.5f));
@@ -172,7 +172,7 @@ public class IngotStackSystem extends BaseComponentSystem {
             } else {
                 blockFamily = blockManager.getBlockFamily(LAYER_1_URI);
             }
-            Block newStackBlock = blockFamily.getBlockForPlacement(worldProvider, blockEntityRegistry, stackPos, Side.TOP, stackBlock.getDirection());
+            Block newStackBlock = blockFamily.getBlockForPlacement(stackPos, Side.TOP, stackBlock.getDirection());
             PlaceBlocks placeNewIngotStack = new PlaceBlocks(stackPos, newStackBlock, instigator);
             worldProvider.getWorldEntity().send(placeNewIngotStack);
             stackEntity = blockEntityRegistry.getBlockEntityAt(stackPos);
