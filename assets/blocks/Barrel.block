@@ -2,7 +2,7 @@
  * A barrel is a quite detailed storage block, probably useful for your RPG maps.
  */
 {
-    "rotation" : "horizontal",
+    "family" : "horizontal",
     // Graphics
     "tiles" : {
         "center" : "StructuralResources:WoodenBarrel",
