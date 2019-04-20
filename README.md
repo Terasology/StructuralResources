@@ -1,4 +1,4 @@
-# Strcutural Resources
+# Structural Resources
 
 This module provides various building resources, e.g., shapes and textures.
 
