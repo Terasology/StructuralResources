@@ -1,0 +1,8 @@
+/**
+ * Marble is a nice block to make things out of
+ */
+{
+    "basedOn": "StructuralResources:Marble",
+    "displayName": "Yellow Marble",
+    "tile": "YellowMarble"
+}

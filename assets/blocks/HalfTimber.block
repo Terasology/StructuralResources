@@ -1,0 +1,9 @@
+/**
+ * Post-and-beam construction using whole logs to build a house
+ * results in half-timber walls. It is most common in Germany.
+ */
+{
+    "basedOn": "CoreAssets:wood",
+    "displayName": "Half-Timber",
+    "tile": "HalfTimber"
+}

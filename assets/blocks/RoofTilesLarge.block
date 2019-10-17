@@ -1,0 +1,8 @@
+/**
+ * Large Terracotta roof tiles
+ */
+{
+    "basedOn": "CoreAssets:rock",
+    "displayName": "Large Roof Tiles",
+    "tile": "RoofTilesLarge"
+}

@@ -1,0 +1,8 @@
+/**
+ * Small Terracotta roof tiles
+ */
+{
+    "basedOn": "CoreAssets:rock",
+    "displayName": "Small Roof Tiles",
+    "tile": "RoofTilesSmall"
+}

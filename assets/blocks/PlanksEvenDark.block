@@ -1,0 +1,8 @@
+/**
+ * Planks that are darker than the normal Plank, and aligned
+ */
+{
+    "basedOn": "CoreAssets:wood",
+    "displayName": "Planks",
+    "tile": "PlanksEvenDark"
+}

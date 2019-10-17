@@ -1,0 +1,8 @@
+/**
+ * A wall made from large stone blocks, more orderly than mere cobblestone.
+ */
+{
+    "basedOn": "CoreAssets:rock",
+    "displayName": "Dark Stone Blocks",
+    "tile": "StoneBlocksDark"
+}
