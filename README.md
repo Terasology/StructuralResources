@@ -12,6 +12,8 @@ Currently, the module contains the following shapes
 * **Stack**: three stack shapes (like ingots or bars; 1/3, 2/3 and Full Stack)
 * **Barrel**: barrel shape and texture
 * **Connectors**: connectors for cables, axles, ... (two sizes, different variants)
+* **TimberFrame**: cross, diagonal, horizontal, vertical, plain
+* **Roof**: various roof tiles
 
 ![image2](https://github.com/MetaTerasology/StructuralResources/raw/master/images/Terasology-140428172032-1152x700.jpg "Stacks and barrel shape.")
 
@@ -19,6 +21,7 @@ Currently, the module contains the following shapes
 * [@skaldarnar](https://github.com/skaldarnar)
 * A'nW
 * [@Josharias](https://github.com/Josharias)
+* [@niruandaleth](https://github.com/jdrueckert)
 
 ### License
 
