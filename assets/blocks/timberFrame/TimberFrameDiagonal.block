@@ -5,7 +5,7 @@
     "tiles": {
         "front": "TimberFrameDiagonalRight",
         "back": "TimberFrameDiagonalLeft",
-        "topBottom": "TimberFrameSide",
-        "sides": "TimberFrameSide
+        "topBottom": "TimberFrameSideHorizontal",
+        "sides": "TimberFrameSideVertical"
     }
 }

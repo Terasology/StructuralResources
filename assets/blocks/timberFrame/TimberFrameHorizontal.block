@@ -1,10 +1,11 @@
 {
-    "displayName": "Timber Frame Vertical",
+    "displayName": "Timber Frame Horizontal",
     "family": "horizontal",
     "shape": "engine:cube",
     "tiles": {
-        "frontBack": "TimberFrameHorizontal",
-        "topBottom": "TimberFrameSide",
-        "sides": "TimberFrameSide
+        "front": "TimberFrameHorizontal",
+        "back": "TimberFrameHorizontal",
+        "topBottom": "TimberFrameSideHorizontal",
+        "sides": "TimberFrameSideVertical"
     }
 }

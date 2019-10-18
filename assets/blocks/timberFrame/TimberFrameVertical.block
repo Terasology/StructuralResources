@@ -3,8 +3,9 @@
     "family": "horizontal",
     "shape": "engine:cube",
     "tiles": {
-        "frontBack": "TimberFrameVertical",
-        "topBottom": "TimberFrameSide",
-        "sides": "TimberFrameSide
+        "front": "TimberFrameVertical",
+        "back": "TimberFrameVertical",
+        "topBottom": "TimberFrameSideHorizontal",
+        "sides": "TimberFrameSideVertical"
     }
 }

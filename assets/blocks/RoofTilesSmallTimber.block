@@ -1,8 +1,10 @@
+/**
+ * Small timber roof tiles
+ */
 {
-    "displayName": "Sorring Laden Block Roof",
-    "family": "none",
+    "displayName": "Small Timber Roof Tiles",
     "shape": "engine:cube",
     "tiles": {
-        "all": "hjerlhede:sorringladenroof"
+        "all": "RoofTilesSmallTimber"
     }
 }
