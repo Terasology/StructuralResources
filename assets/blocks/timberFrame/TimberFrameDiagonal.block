@@ -1,0 +1,11 @@
+{
+    "displayName": "Timber Frame Diagonal",
+    "family": "horizontal",
+    "shape": "engine:cube",
+    "tiles": {
+        "front": "TimberFrameDiagonalRight",
+        "back": "TimberFrameDiagonalLeft",
+        "topBottom": "TimberFrameSide",
+        "sides": "TimberFrameSide
+    }
+}

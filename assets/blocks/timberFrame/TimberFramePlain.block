@@ -1,0 +1,10 @@
+{
+    "displayName": "Sorring Laden Plain",
+    "family": "horizontal",
+    "shape": "engine:cube",
+    "tiles": {
+        "frontBack": "TimberFramePlain",
+        "topBottom": "TimberFrameSide",
+        "sides": "TimberFrameSide
+    }
+}

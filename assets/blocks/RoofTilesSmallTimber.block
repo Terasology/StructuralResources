@@ -1,0 +1,8 @@
+{
+    "displayName": "Sorring Laden Block Roof",
+    "family": "none",
+    "shape": "engine:cube",
+    "tiles": {
+        "all": "hjerlhede:sorringladenroof"
+    }
+}
