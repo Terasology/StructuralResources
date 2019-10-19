@@ -1,7 +1,6 @@
 {
     "displayName": "Timber Frame Vertical",
     "family": "horizontal",
-    "shape": "engine:cube",
     "tiles": {
         "front": "TimberFrameVertical",
         "back": "TimberFrameVertical",
