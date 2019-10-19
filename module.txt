@@ -1,6 +1,6 @@
 {
     "id" : "StructuralResources",
-    "version" : "1.0.2-SNAPSHOT",
+    "version" : "2.0.0-SNAPSHOT",
     "author" : "skaldarnar, A'nW",
     "displayName" : "Structural Resources",
     "description" : "This module adds various resources for buildings, e.g. new shapes.",
