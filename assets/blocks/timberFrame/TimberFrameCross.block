@@ -2,9 +2,7 @@
     "displayName": "Timber Frame Cross",
     "family": "horizontal",
     "tiles": {
-        "front": "TimberFrameCross",
-        "back": "TimberFrameCross",
-        "topBottom": "TimberFrameSideHorizontal",
-        "sides": "TimberFrameSideVertical"
+        "topBottom": "TimberFramePlain",
+        "sides": "TimberFrameCross"
     }
 }

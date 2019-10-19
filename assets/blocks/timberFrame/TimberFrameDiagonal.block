@@ -2,9 +2,10 @@
     "displayName": "Timber Frame Diagonal",
     "family": "horizontal",
     "tiles": {
-        "front": "TimberFrameDiagonalRight",
-        "back": "TimberFrameDiagonalLeft",
-        "topBottom": "TimberFrameSideHorizontal",
-        "sides": "TimberFrameSideVertical"
+        "front": "TimberFrameDiagonalLeft",
+        "back": "TimberFrameDiagonalRight",
+        "topBottom": "TimberFramePlain",
+        "left": "TimberFrameDiagonalRight",
+        "right": "TimberFrameDiagonalLeft"
     }
 }
