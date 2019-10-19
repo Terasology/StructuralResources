@@ -1,0 +1,11 @@
+/**
+ * Small timber corner roof tiles
+ */
+{
+    "displayName": "Small Timber Corner Roof Tiles",
+    "family": "horizontal",
+    "shape": "engine:slopecorner",
+    "tiles": {
+        "all": "RoofTilesSmallTimber"
+    }
+}

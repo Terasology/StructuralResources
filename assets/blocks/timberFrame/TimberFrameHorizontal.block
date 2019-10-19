@@ -1,0 +1,8 @@
+{
+    "displayName": "Timber Frame Horizontal",
+    "family": "horizontal",
+    "tiles": {
+        "topBottom": "TimberFramePlain",
+        "sides": "TimberFrameHorizontal"
+    }
+}

@@ -1,0 +1,11 @@
+/**
+ * Small timber slope roof tiles
+ */
+{
+    "displayName": "Small Timber Slope Roof Tiles",
+    "family": "horizontal",
+    "shape": "engine:slope",
+    "tiles": {
+        "all": "RoofTilesSmallTimber"
+    }
+}

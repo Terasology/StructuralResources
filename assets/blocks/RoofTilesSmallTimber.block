@@ -1,0 +1,9 @@
+/**
+ * Small timber roof tiles
+ */
+{
+    "displayName": "Small Timber Roof Tiles",
+    "tiles": {
+        "all": "RoofTilesSmallTimber"
+    }
+}

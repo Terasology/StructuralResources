@@ -1,0 +1,12 @@
+/**
+ * Black long roof tiles
+ */
+{
+    "displayName": "Black Long Roof Tiles",
+    "family": "horizontal",
+    "shape": "engine:slope",
+    "tiles": {
+        "front": "RoofTilesLong",
+        "sides": "CoreAssets:brick"
+    }
+}
