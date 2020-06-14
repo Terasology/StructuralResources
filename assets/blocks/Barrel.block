@@ -15,5 +15,8 @@
     "inventory" : {
         "stackable" : false,
         "directPickup" : true
-    }
+    },
+    "categories": ["wood"],
+    "hardness": 10,
+    "mass": 20
 }
