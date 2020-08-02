@@ -1,0 +1,5 @@
+{
+  "basedOn": "CoreAssets:Plank",
+  "tile": "HjerlHede:plank-vertical",
+  "displayName": "Vertical Plank"
+}

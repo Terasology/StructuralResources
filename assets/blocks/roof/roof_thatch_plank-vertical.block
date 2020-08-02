@@ -1,0 +1,8 @@
+{
+  "displayName": "Thatched Roof (planks)",
+  "tiles": {
+    "all": "HjerlHede:Thatch",
+    "sides": "HjerlHede:plank-vertical",
+    "bottom": "HjerlHede:plank-vertical"
+  }
+}
