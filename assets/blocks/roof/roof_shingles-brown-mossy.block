@@ -1,0 +1,6 @@
+{
+  "displayName": "Brown Mossy Roof",
+  "tiles": {
+    "all": "StructuralResources:shingles-brown-mossy"
+  }
+}

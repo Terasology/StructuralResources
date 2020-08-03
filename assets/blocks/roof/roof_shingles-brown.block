@@ -1,0 +1,6 @@
+{
+  "displayName": "Brown Roof",
+  "tiles": {
+    "all": "StructuralResources:shingles-brown"
+  }
+}

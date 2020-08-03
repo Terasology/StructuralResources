@@ -1,0 +1,8 @@
+{
+  "displayName": "Thatched Roof (planks)",
+  "tiles": {
+    "all": "StructuralResources:Thatch",
+    "sides": "StructuralResources:plank-vertical",
+    "bottom": "StructuralResources:plank-vertical"
+  }
+}

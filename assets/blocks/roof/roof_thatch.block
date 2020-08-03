@@ -1,0 +1,6 @@
+{
+  "displayName": "Thatched Roof",
+  "tiles": {
+    "all": "StructuralResources:Thatch"
+  }
+}

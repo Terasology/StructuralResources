@@ -1,0 +1,5 @@
+{
+  "basedOn": "CoreAssets:Glass",
+  "displayName": "Framed Window (red)",
+  "tile": "StructuralResources:glass-framed-red"
+}

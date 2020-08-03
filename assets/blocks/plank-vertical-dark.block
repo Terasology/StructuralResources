@@ -1,0 +1,7 @@
+{
+  "basedOn": "CoreAssets:Plank",
+  "tiles": {
+    "all": "StructuralResources:plank-vertical-dark"
+  },
+  "displayName": "Plank (dark)"
+}

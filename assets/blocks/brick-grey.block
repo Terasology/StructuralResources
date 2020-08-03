@@ -1,0 +1,7 @@
+{
+    "displayName": "Grey Bricks",
+    "basedOn": "CoreAssets:Brick",
+    "tiles": {
+        "all": "StructuralResources:brick-grey"
+    }
+}

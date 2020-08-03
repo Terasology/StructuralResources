@@ -1,0 +1,5 @@
+{
+  "basedOn": "CoreAssets:wood",
+  "tile": "StructuralResources:timberframe-plain-red",
+  "displayName": "Timber Frame (red)"
+}

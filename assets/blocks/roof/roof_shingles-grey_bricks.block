@@ -1,0 +1,8 @@
+{
+    "displayName": "Grey Roof",
+    "tiles": {
+        "all": "StructuralResources:shingles-grey",
+        "sides": "CoreAssets:Brick",
+        "bottom": "CoreAssets:Brick"
+    }
+}

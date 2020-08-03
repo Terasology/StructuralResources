@@ -1,0 +1,8 @@
+{
+  "displayName": "Thatched Roof (burgundy planks)",
+  "tiles": {
+    "all": "StructuralResources:Thatch",
+    "sides": "StructuralResources:plank-vertical-burgundy",
+    "bottom": "StructuralResources:plank-vertical-burgundy"
+  }
+}

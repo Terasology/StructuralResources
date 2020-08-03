@@ -1,0 +1,5 @@
+{
+  "basedOn": "CoreAssets:Plank",
+  "tile": "StructuralResources:plank-vertical",
+  "displayName": "Vertical Plank"
+}
