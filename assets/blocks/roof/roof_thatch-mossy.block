@@ -1,0 +1,6 @@
+{
+  "displayName": "Thatched Mossy Roof",
+  "tiles": {
+    "all": "StructuralResources:thatch-mossy"
+  }
+}
