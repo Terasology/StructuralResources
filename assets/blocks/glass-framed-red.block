@@ -1,5 +1,5 @@
 {
   "basedOn": "CoreAssets:Glass",
   "displayName": "Framed Window (red)",
-  "tile": "HjerlHede:glass-framed-red"
+  "tile": "StructuralResources:glass-framed-red"
 }

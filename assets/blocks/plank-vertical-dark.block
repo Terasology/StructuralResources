@@ -1,7 +1,7 @@
 {
   "basedOn": "CoreAssets:Plank",
   "tiles": {
-    "all": "HjerlHede:plank-vertical-dark"
+    "all": "StructuralResources:plank-vertical-dark"
   },
   "displayName": "Plank (dark)"
 }

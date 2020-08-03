@@ -1,5 +1,5 @@
 {
   "basedOn": "CoreAssets:wood",
-  "tile": "HjerlHede:timberframe-plain-red",
+  "tile": "StructuralResources:timberframe-plain-red",
   "displayName": "Timber Frame (red)"
 }
