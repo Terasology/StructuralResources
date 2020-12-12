@@ -15,6 +15,8 @@
  */
 package org.terasology.StructuralResources;
 
+import org.joml.RoundingMode;
+import org.joml.Vector3f;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.terasology.audio.events.PlaySoundEvent;
@@ -34,6 +36,7 @@ import org.terasology.logic.inventory.events.InventorySlotStackSizeChangedEvent;
 import org.terasology.logic.location.LocationComponent;
 import org.terasology.logic.players.LocalPlayer;
 import org.terasology.math.ChunkMath;
+import org.terasology.math.JomlUtil;
 import org.terasology.math.Side;
 import org.terasology.math.geom.Vector3i;
 import org.terasology.registry.In;
@@ -79,8 +82,8 @@ public class IngotStackSystem extends BaseComponentSystem {
 
         Side surfaceSide = Side.inDirection(event.getHitNormal());
         Side secondaryDirection = ChunkMath.getSecondaryPlacementDirection(event.getDirection(), event.getHitNormal());
-        Vector3i blockPos = new Vector3i(targetBlockComponent.getPosition());
-        Vector3i targetPos = new Vector3i(blockPos).add(surfaceSide.getVector3i());
+        org.joml.Vector3i blockPos = new org.joml.Vector3i(targetBlockComponent.getPosition(new org.joml.Vector3i()));
+        org.joml.Vector3i targetPos = new org.joml.Vector3i(blockPos).add(surfaceSide.direction());
         IngotStackComponent stackComponent = event.getTarget().getComponent(IngotStackComponent.class);
 
         if (stackComponent != null && stackComponent.ingots < MAX_INGOTS) {
@@ -91,7 +94,7 @@ public class IngotStackSystem extends BaseComponentSystem {
 
         } else if (canPlaceBlock(blockPos, targetPos)) {
             Block newStackBlock = blockManager.getBlockFamily(LAYER_1_URI)
-                    .getBlockForPlacement(targetPos, surfaceSide, secondaryDirection);
+                    .getBlockForPlacement(JomlUtil.from(targetPos), surfaceSide, secondaryDirection);
             PlaceBlocks placeNewIngotStack = new PlaceBlocks(targetPos, newStackBlock, instigator);
             worldProvider.getWorldEntity().send(placeNewIngotStack);
             instigator.send(new PlaySoundEvent(Assets.getSound("engine:PlaceBlock").get(), 0.5f));
@@ -116,7 +119,7 @@ public class IngotStackSystem extends BaseComponentSystem {
     public void onStackSizeChange(InventorySlotStackSizeChangedEvent event, EntityRef stackEntity, IngotStackComponent stackComponent) {
         EntityRef instigator = localPlayer.getCharacterEntity();
         LocationComponent locationComponent = stackEntity.getComponent(LocationComponent.class);
-        Vector3i pos = new Vector3i(locationComponent.getWorldPosition());
+        org.joml.Vector3i pos = new org.joml.Vector3i(locationComponent.getWorldPosition(new Vector3f()), RoundingMode.CEILING);
         if (event.getNewSize() > MAX_INGOTS) {
             inventoryManager.moveItem(stackEntity, instigator, 0, instigator, findSlot(instigator), event.getNewSize() - MAX_INGOTS);
         }
@@ -135,13 +138,13 @@ public class IngotStackSystem extends BaseComponentSystem {
     @ReceiveEvent
     public void onEmpty(InventorySlotChangedEvent event, EntityRef stackEntity, IngotStackComponent stackComponent) {
         LocationComponent locationComponent = stackEntity.getComponent(LocationComponent.class);
-        Vector3i pos = new Vector3i(locationComponent.getWorldPosition());
+        org.joml.Vector3i pos = new org.joml.Vector3i(locationComponent.getWorldPosition(new org.joml.Vector3f()), RoundingMode.CEILING);
         if (event.getOldItem().hasComponent(IngotComponent.class) && event.getNewItem() == EntityRef.NULL) {
             updateIngotStack(pos, 0, localPlayer.getCharacterEntity());
         }
     }
 
-    private void updateIngotStack(Vector3i stackPos, int ingots, EntityRef instigator) {
+    private void updateIngotStack(org.joml.Vector3i stackPos, int ingots, EntityRef instigator) {
         EntityRef stackEntity = blockEntityRegistry.getBlockEntityAt(stackPos);
         Block stackBlock = worldProvider.getBlock(stackPos);
         String blockUriString = stackBlock.getBlockFamily().getURI().toString();
@@ -171,7 +174,7 @@ public class IngotStackSystem extends BaseComponentSystem {
             } else {
                 blockFamily = blockManager.getBlockFamily(LAYER_1_URI);
             }
-            Block newStackBlock = blockFamily.getBlockForPlacement(stackPos, Side.TOP, stackBlock.getDirection());
+            Block newStackBlock = blockFamily.getBlockForPlacement(JomlUtil.from(stackPos), Side.TOP, stackBlock.getDirection());
             PlaceBlocks placeNewIngotStack = new PlaceBlocks(stackPos, newStackBlock, instigator);
             worldProvider.getWorldEntity().send(placeNewIngotStack);
             stackEntity = blockEntityRegistry.getBlockEntityAt(stackPos);
@@ -180,7 +183,7 @@ public class IngotStackSystem extends BaseComponentSystem {
         stackEntity.saveComponent(stackComponent);
     }
 
-    private boolean canPlaceBlock(Vector3i blockPos, Vector3i targetPos) {
+    private boolean canPlaceBlock(org.joml.Vector3i blockPos, org.joml.Vector3i targetPos) {
         Block block = worldProvider.getBlock(blockPos);
         Block targetBlock = worldProvider.getBlock(targetPos);
 
