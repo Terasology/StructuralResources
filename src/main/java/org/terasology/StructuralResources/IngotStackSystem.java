@@ -119,7 +119,7 @@ public class IngotStackSystem extends BaseComponentSystem {
     public void onStackSizeChange(InventorySlotStackSizeChangedEvent event, EntityRef stackEntity, IngotStackComponent stackComponent) {
         EntityRef instigator = localPlayer.getCharacterEntity();
         LocationComponent locationComponent = stackEntity.getComponent(LocationComponent.class);
-        org.joml.Vector3i pos = new org.joml.Vector3i(locationComponent.getWorldPosition(new Vector3f()), RoundingMode.CEILING);
+        org.joml.Vector3i pos = new org.joml.Vector3i(locationComponent.getWorldPosition(new Vector3f()), RoundingMode.FLOOR);
         if (event.getNewSize() > MAX_INGOTS) {
             inventoryManager.moveItem(stackEntity, instigator, 0, instigator, findSlot(instigator), event.getNewSize() - MAX_INGOTS);
         }
@@ -138,7 +138,7 @@ public class IngotStackSystem extends BaseComponentSystem {
     @ReceiveEvent
     public void onEmpty(InventorySlotChangedEvent event, EntityRef stackEntity, IngotStackComponent stackComponent) {
         LocationComponent locationComponent = stackEntity.getComponent(LocationComponent.class);
-        org.joml.Vector3i pos = new org.joml.Vector3i(locationComponent.getWorldPosition(new org.joml.Vector3f()), RoundingMode.CEILING);
+        org.joml.Vector3i pos = new org.joml.Vector3i(locationComponent.getWorldPosition(new org.joml.Vector3f()), RoundingMode.FLOOR);
         if (event.getOldItem().hasComponent(IngotComponent.class) && event.getNewItem() == EntityRef.NULL) {
             updateIngotStack(pos, 0, localPlayer.getCharacterEntity());
         }
