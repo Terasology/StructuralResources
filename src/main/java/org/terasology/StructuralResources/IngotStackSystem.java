@@ -34,6 +34,7 @@ import org.terasology.logic.inventory.events.InventorySlotStackSizeChangedEvent;
 import org.terasology.logic.location.LocationComponent;
 import org.terasology.logic.players.LocalPlayer;
 import org.terasology.math.ChunkMath;
+import org.terasology.math.JomlUtil;
 import org.terasology.math.Side;
 import org.terasology.math.geom.Vector3i;
 import org.terasology.registry.In;
@@ -92,7 +93,7 @@ public class IngotStackSystem extends BaseComponentSystem {
         } else if (canPlaceBlock(blockPos, targetPos)) {
             Block newStackBlock = blockManager.getBlockFamily(LAYER_1_URI)
                     .getBlockForPlacement(targetPos, surfaceSide, secondaryDirection);
-            PlaceBlocks placeNewIngotStack = new PlaceBlocks(targetPos, newStackBlock, instigator);
+            PlaceBlocks placeNewIngotStack = new PlaceBlocks(JomlUtil.from(targetPos), newStackBlock, instigator);
             worldProvider.getWorldEntity().send(placeNewIngotStack);
             instigator.send(new PlaySoundEvent(Assets.getSound("engine:PlaceBlock").get(), 0.5f));
             inventoryManager.moveItem(instigator, instigator, findSlot(instigator), blockEntityRegistry.getBlockEntityAt(targetPos), 0, 1);
