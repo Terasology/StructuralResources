@@ -38,7 +38,6 @@ import org.terasology.logic.players.LocalPlayer;
 import org.terasology.math.ChunkMath;
 import org.terasology.math.JomlUtil;
 import org.terasology.math.Side;
-import org.terasology.math.geom.Vector3i;
 import org.terasology.registry.In;
 import org.terasology.utilities.Assets;
 import org.terasology.world.BlockEntityRegistry;
