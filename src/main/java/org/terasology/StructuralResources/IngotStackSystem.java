@@ -1,18 +1,5 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2021 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.StructuralResources;
 
 import org.joml.RoundingMode;
@@ -36,7 +23,6 @@ import org.terasology.logic.inventory.events.InventorySlotStackSizeChangedEvent;
 import org.terasology.logic.location.LocationComponent;
 import org.terasology.logic.players.LocalPlayer;
 import org.terasology.math.ChunkMath;
-import org.terasology.math.JomlUtil;
 import org.terasology.math.Side;
 import org.terasology.registry.In;
 import org.terasology.utilities.Assets;
@@ -47,6 +33,7 @@ import org.terasology.world.block.BlockComponent;
 import org.terasology.world.block.BlockManager;
 import org.terasology.world.block.entity.placement.PlaceBlocks;
 import org.terasology.world.block.family.BlockFamily;
+import org.terasology.world.block.family.BlockPlacementData;
 
 @RegisterSystem
 public class IngotStackSystem extends BaseComponentSystem {
@@ -93,7 +80,7 @@ public class IngotStackSystem extends BaseComponentSystem {
 
         } else if (canPlaceBlock(blockPos, targetPos)) {
             Block newStackBlock = blockManager.getBlockFamily(LAYER_1_URI)
-                    .getBlockForPlacement(JomlUtil.from(targetPos), surfaceSide, secondaryDirection);
+                    .getBlockForPlacement(new BlockPlacementData(targetPos, surfaceSide, secondaryDirection.toDirection().asVector3f()));
             PlaceBlocks placeNewIngotStack = new PlaceBlocks(targetPos, newStackBlock, instigator);
             worldProvider.getWorldEntity().send(placeNewIngotStack);
             instigator.send(new PlaySoundEvent(Assets.getSound("engine:PlaceBlock").get(), 0.5f));
@@ -173,7 +160,7 @@ public class IngotStackSystem extends BaseComponentSystem {
             } else {
                 blockFamily = blockManager.getBlockFamily(LAYER_1_URI);
             }
-            Block newStackBlock = blockFamily.getBlockForPlacement(JomlUtil.from(stackPos), Side.TOP, stackBlock.getDirection());
+            Block newStackBlock = blockFamily.getBlockForPlacement(new BlockPlacementData(stackPos, Side.TOP, stackBlock.getDirection().toDirection().asVector3f()));
             PlaceBlocks placeNewIngotStack = new PlaceBlocks(stackPos, newStackBlock, instigator);
             worldProvider.getWorldEntity().send(placeNewIngotStack);
             stackEntity = blockEntityRegistry.getBlockEntityAt(stackPos);
