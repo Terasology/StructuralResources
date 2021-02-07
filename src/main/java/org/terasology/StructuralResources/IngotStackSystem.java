@@ -22,7 +22,6 @@ import org.terasology.logic.inventory.events.InventorySlotChangedEvent;
 import org.terasology.logic.inventory.events.InventorySlotStackSizeChangedEvent;
 import org.terasology.logic.location.LocationComponent;
 import org.terasology.logic.players.LocalPlayer;
-import org.terasology.math.ChunkMath;
 import org.terasology.math.Side;
 import org.terasology.registry.In;
 import org.terasology.utilities.Assets;
@@ -67,7 +66,6 @@ public class IngotStackSystem extends BaseComponentSystem {
         }
 
         Side surfaceSide = Side.inDirection(event.getHitNormal());
-        Side secondaryDirection = ChunkMath.getSecondaryPlacementDirection(event.getDirection(), event.getHitNormal());
         org.joml.Vector3i blockPos = new org.joml.Vector3i(targetBlockComponent.getPosition(new org.joml.Vector3i()));
         org.joml.Vector3i targetPos = new org.joml.Vector3i(blockPos).add(surfaceSide.direction());
         IngotStackComponent stackComponent = event.getTarget().getComponent(IngotStackComponent.class);
@@ -80,7 +78,7 @@ public class IngotStackSystem extends BaseComponentSystem {
 
         } else if (canPlaceBlock(blockPos, targetPos)) {
             Block newStackBlock = blockManager.getBlockFamily(LAYER_1_URI)
-                    .getBlockForPlacement(new BlockPlacementData(targetPos, surfaceSide, secondaryDirection.toDirection().asVector3f()));
+                    .getBlockForPlacement(new BlockPlacementData(targetPos, surfaceSide, event.getDirection()));
             PlaceBlocks placeNewIngotStack = new PlaceBlocks(targetPos, newStackBlock, instigator);
             worldProvider.getWorldEntity().send(placeNewIngotStack);
             instigator.send(new PlaySoundEvent(Assets.getSound("engine:PlaceBlock").get(), 0.5f));
