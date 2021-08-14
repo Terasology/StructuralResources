@@ -8,7 +8,7 @@ public class IngotStackComponent implements Component<IngotStackComponent> {
     public int ingots;
 
     @Override
-    public void copy(IngotStackComponent other) {
+    public void copyFrom(IngotStackComponent other) {
         this.ingots = other.ingots;
     }
 }
