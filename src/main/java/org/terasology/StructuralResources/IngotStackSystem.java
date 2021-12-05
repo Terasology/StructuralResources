@@ -9,17 +9,11 @@ import org.slf4j.LoggerFactory;
 import org.terasology.engine.audio.events.PlaySoundEvent;
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.entitySystem.event.EventPriority;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
+import org.terasology.engine.entitySystem.event.Priority;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.engine.logic.characters.events.AttackEvent;
 import org.terasology.engine.logic.common.ActivateEvent;
-import org.terasology.module.inventory.systems.InventoryManager;
-import org.terasology.module.inventory.systems.InventoryUtils;
-import org.terasology.module.inventory.components.SelectedInventorySlotComponent;
-import org.terasology.module.inventory.events.BeforeItemPutInInventory;
-import org.terasology.module.inventory.events.InventorySlotChangedEvent;
-import org.terasology.module.inventory.events.InventorySlotStackSizeChangedEvent;
 import org.terasology.engine.logic.location.LocationComponent;
 import org.terasology.engine.logic.players.LocalPlayer;
 import org.terasology.engine.math.Side;
@@ -33,6 +27,13 @@ import org.terasology.engine.world.block.BlockManager;
 import org.terasology.engine.world.block.entity.placement.PlaceBlocks;
 import org.terasology.engine.world.block.family.BlockFamily;
 import org.terasology.engine.world.block.family.BlockPlacementData;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
+import org.terasology.module.inventory.components.SelectedInventorySlotComponent;
+import org.terasology.module.inventory.events.BeforeItemPutInInventory;
+import org.terasology.module.inventory.events.InventorySlotChangedEvent;
+import org.terasology.module.inventory.events.InventorySlotStackSizeChangedEvent;
+import org.terasology.module.inventory.systems.InventoryManager;
+import org.terasology.module.inventory.systems.InventoryUtils;
 
 @RegisterSystem
 public class IngotStackSystem extends BaseComponentSystem {
@@ -56,7 +57,8 @@ public class IngotStackSystem extends BaseComponentSystem {
     @In
     private LocalPlayer localPlayer;
 
-    @ReceiveEvent(priority = EventPriority.PRIORITY_HIGH)
+    @Priority(EventPriority.PRIORITY_HIGH)
+    @ReceiveEvent
     public void onRightClick(ActivateEvent event, EntityRef entity, IngotComponent ingotComponent) {
         EntityRef instigator = event.getInstigator();
         BlockComponent targetBlockComponent = event.getTarget().getComponent(BlockComponent.class);
@@ -88,7 +90,8 @@ public class IngotStackSystem extends BaseComponentSystem {
         event.consume();
     }
 
-    @ReceiveEvent(priority = EventPriority.PRIORITY_HIGH)
+    @Priority(EventPriority.PRIORITY_HIGH)
+    @ReceiveEvent
     public void onLeftClick(AttackEvent event, EntityRef stackEntity, IngotStackComponent stackComponent) {
         EntityRef instigator = event.getInstigator();
         if (stackComponent.ingots > 0) {
